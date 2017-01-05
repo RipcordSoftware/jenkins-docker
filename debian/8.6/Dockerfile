@@ -14,9 +14,10 @@ RUN apt-get install -y -qq zlib1g-dev libboost-all-dev libcppunit-dev
 
 # other languages
 RUN apt-get install -y -qq ruby
-RUN apt-get install -y -qq default-jdk
+RUN apt-get install -y -qq default-jdk-headless
 RUN apt-get install -y -qq nodejs npm
 RUN apt-get install -y -qq python python-pip python3 python3-pip
+RUN apt-get install -y -qq golang
 
 # other language tools and libs
 RUN apt-get install -y -qq lcov
