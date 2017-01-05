@@ -21,6 +21,7 @@ RUN apt-get install -y -qq golang
 
 # other language tools and libs
 RUN apt-get install -y -qq lcov
+RUN pip install --upgrade pip
 RUN pip install json_tools
 RUN pip install u-msgpack-python
 

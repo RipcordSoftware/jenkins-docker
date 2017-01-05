@@ -20,6 +20,7 @@ RUN yum install -y golang
 
 # other language tools and libs
 RUN yum install -y lcov
+RUN pip install --upgrade pip
 RUN pip install json_tools
 RUN pip install u-msgpack-python
 

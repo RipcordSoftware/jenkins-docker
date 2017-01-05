@@ -24,11 +24,12 @@ RUN wget http://repo.enetres.net/enetres.repo -O /etc/yum.repos.d/enetres.repo &
 RUN yum install -y ruby
 RUN yum install -y java-1.8.0-openjdk-headless
 RUN yum install -y nodejs npm
-RUN yum install -y python python-pip python34 python34-pip
+RUN yum install -y python python-pip python27 python34
 RUN yum install -y golang
 
 # other language tools and libs
 RUN yum install -y lcov
+RUN pip install --upgrade pip
 RUN pip install json_tools
 RUN pip install u-msgpack-python
 
