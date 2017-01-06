@@ -9,7 +9,7 @@ RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release wh
 RUN yum install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache
 
 # C++ libraries
-RUN yum install -y zlib-devel libboost-devel cppunit-devel
+RUN yum install -y zlib-devel boost-devel cppunit-devel
 
 # other languages
 RUN yum install -y ruby && \
