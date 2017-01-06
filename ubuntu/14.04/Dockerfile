@@ -15,7 +15,7 @@ RUN apt-get install -y -qq zlib1g-dev libboost-all-dev libcppunit-dev
 # other languages
 RUN apt-get install -y -qq ruby ruby-rspec bundler && \
     apt-get install -y -qq openjdk-7-jdk && \
-    apt-get install -y -qq nodejs npm && \
+    apt-get install -y -qq nodejs nodejs-legacy npm && \
     apt-get install -y -qq python python-pip python3 python3-pip && \
     apt-get install -y -qq golang
 
@@ -24,6 +24,9 @@ RUN apt-get install -y -qq lcov && \
     pip install --upgrade pip && \
     pip install json_tools && \
     pip install u-msgpack-python
+
+# database servers
+RUN apt-get install -y -qq couchdb && service couchdb start && sleep 5 && service couchdb stop
 
 # update sudoers
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
