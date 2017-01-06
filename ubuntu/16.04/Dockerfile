@@ -4,7 +4,7 @@ USER root
 
 # update apt and install basic tools
 RUN apt-get update -qq && \
-    apt-get install -y -qq apt-utils sudo curl wget unzip bzip2 xz-utils pkg-config rsync
+    apt-get install -y -qq apt-utils sudo curl wget unzip bzip2 xz-utils pkg-config rsync net-tools
 
 # C++ tools
 RUN apt-get install -y -qq git gcc g++ make autoconf automake libtool doxygen valgrind ccache
@@ -24,6 +24,9 @@ RUN apt-get install -y -qq lcov && \
     pip install --upgrade pip && \
     pip install json_tools && \
     pip install u-msgpack-python
+
+# database servers
+RUN apt-get install -y -qq couchdb
 
 # update sudoers
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
