@@ -5,7 +5,7 @@ ENV GCC_VER 5.4.0
 ENV GCC_SUFFIX 5.4
 
 # install basic tools
-RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release
+RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release which
 
 # C++ tools
 RUN yum install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache
