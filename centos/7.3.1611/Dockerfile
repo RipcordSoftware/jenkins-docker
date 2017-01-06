@@ -3,7 +3,7 @@ MAINTAINER Craig Minihan <craig@ripcordsoftware.com>
 USER root
 
 # install basic tools
-RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release which
+RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release net-tools which telnet
 
 # C++ tools
 RUN yum install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache
@@ -12,7 +12,7 @@ RUN yum install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgri
 RUN yum install -y zlib-devel boost-devel cppunit-devel
 
 # other languages
-RUN yum install -y ruby && \
+RUN yum install -y ruby rubygems rubygem-bundler && \
     yum install -y java-1.8.0-openjdk-headless && \
     yum install -y nodejs npm && \
     yum install -y python python-pip python34 python34-pip && \

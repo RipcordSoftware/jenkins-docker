@@ -5,7 +5,7 @@ ENV GCC_VER 4.9.2
 ENV GCC_SUFFIX 4.9
 
 # install basic tools
-RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release
+RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release net-tools telnet
 
 # C++ tools
 RUN yum install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache
@@ -40,7 +40,7 @@ RUN yum install -y libmpc-devel mpfr-devel gmp-devel && \
     echo 'export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH' > /etc/profile.d/ld-library-path.sh
 
 # other languages
-RUN yum install -y ruby
+RUN yum install -y ruby rubygems rubygem-bundler
 RUN yum install -y java-1.8.0-openjdk-headless
 RUN yum install -y nodejs npm
 RUN yum install -y golang

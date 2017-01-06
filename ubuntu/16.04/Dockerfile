@@ -13,7 +13,7 @@ RUN apt-get install -y -qq git gcc g++ make autoconf automake libtool doxygen va
 RUN apt-get install -y -qq zlib1g-dev libboost-all-dev libcppunit-dev
 
 # other languages
-RUN apt-get install -y -qq ruby && \
+RUN apt-get install -y -qq ruby bundler && \
     apt-get install -y -qq default-jdk-headless && \
     apt-get install -y -qq nodejs npm && \
     apt-get install -y -qq python python-pip python3 python3-pip && \

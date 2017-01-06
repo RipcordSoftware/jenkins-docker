@@ -3,7 +3,7 @@ MAINTAINER Craig Minihan <craig@ripcordsoftware.com>
 USER root
 
 # install basic tools
-RUN dnf install -y sudo curl wget unzip bzip2 xz pkgconfig rsync which
+RUN dnf install -y sudo curl wget unzip bzip2 xz pkgconfig rsync net-tools which telnet
 
 # C++ tools
 RUN dnf install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache
@@ -12,7 +12,7 @@ RUN dnf install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgri
 RUN dnf install -y zlib-devel boost-devel cppunit-devel
 
 # other languages
-RUN dnf install -y ruby && \
+RUN dnf install -y ruby rubygems rubygem-bundler && \
     dnf install -y java-1.8.0-openjdk-headless && \
     dnf install -y nodejs npm && \
     dnf install -y python python-pip python34 python3-pip && \
