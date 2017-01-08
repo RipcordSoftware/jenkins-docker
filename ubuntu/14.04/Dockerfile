@@ -26,7 +26,7 @@ RUN apt-get install -y -qq lcov && \
     pip install u-msgpack-python
 
 # database servers
-RUN apt-get install -y -qq couchdb && service couchdb start && sleep 5 && service couchdb stop
+RUN apt-get install -y -qq couchdb && mkdir /var/run/couchdb && chown couchdb:couchdb /var/run/couchdb
 
 # update sudoers
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
