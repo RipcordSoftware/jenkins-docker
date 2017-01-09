@@ -38,10 +38,7 @@ RUN apt-get install -y erlang-nox erlang-dev && \
     useradd -d /var/lib/couchdb couchdb && \
     mkdir -p /usr/local/{lib,etc}/couchdb /usr/local/var/{lib,log,run}/couchdb /var/lib/couchdb && \
     chmod -R g+rw /usr/local/{lib,etc}/couchdb /usr/local/var/{lib,log,run}/couchdb && \
-    chown -R couchdb:couchdb /usr/local/{lib,etc}/couchdb /usr/local/var/{lib,log,run}/couchdb && \
-    ln -s /usr/local/etc/init.d/couchdb /etc/init.d/couchdb && \
-    /etc/init.d/couchdb start && \
-    update-rc.d couchdb defaults
+    chown -R couchdb:couchdb /usr/local/{lib,etc}/couchdb /usr/local/var/{lib,log,run}/couchdb
 
 # update sudoers
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers

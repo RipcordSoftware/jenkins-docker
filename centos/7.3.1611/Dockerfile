@@ -24,5 +24,18 @@ RUN yum install -y lcov && \
     pip install json_tools && \
     pip install u-msgpack-python
 
+# build and install couchdb
+RUN yum install -y erlang-asn1 erlang-erts erlang-eunit erlang-os_mon erlang-xmerl help2man libicu-devel js js-devel && \
+    wget ftp://ftp.mirrorservice.org/sites/ftp.apache.org/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz && \
+    tar xf apache-couchdb-1.6.1.tar.gz && \
+    cd apache-couchdb-1.6.1 && \
+    ./configure --prefix=/usr/local --enable-init --with-erlang=/usr/lib64/erlang/erts-5.10.4/include && \
+    make -j4 && \
+    make install && \
+    useradd -d /var/lib/couchdb couchdb && \
+    mkdir -p /usr/local/{lib,etc}/couchdb /usr/local/var/{lib,log,run}/couchdb /var/lib/couchdb && \
+    chmod -R g+rw /usr/local/{lib,etc}/couchdb /usr/local/var/{lib,log,run}/couchdb && \
+    chown -R couchdb:couchdb /usr/local/{lib,etc}/couchdb /usr/local/var/{lib,log,run}/couchdb
+
 # update sudoers
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
