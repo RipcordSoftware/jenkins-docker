@@ -12,7 +12,7 @@ RUN dnf install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgri
 RUN dnf install -y zlib-devel boost-devel cppunit-devel
 
 # other languages
-RUN dnf install -y ruby rubygems rubygem-bundler rubygem-rspec && \
+RUN dnf install -y ruby ruby-devel rubygems rubygem-bundler rubygem-rspec && \
     dnf install -y java-1.8.0-openjdk-headless && \
     dnf install -y nodejs npm && \
     dnf install -y python python-pip python34 python3-pip && \
