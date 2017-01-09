@@ -12,7 +12,7 @@ RUN yum install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgri
 RUN yum install -y zlib-devel boost-devel cppunit-devel
 
 # other languages
-RUN yum install -y ruby rubygems rubygem-bundler rubygem-rspec && \
+RUN yum install -y ruby ruby-devel rubygems rubygem-bundler rubygem-rspec && \
     yum install -y java-1.8.0-openjdk-headless && \
     yum install -y nodejs npm && \
     yum install -y python python-pip python34 python34-pip && \
