@@ -25,7 +25,7 @@ RUN dnf install -y lcov && \
     pip install u-msgpack-python
 
 # database servers
-RUN apt-get install -y -qq couchdb && service couchdb start && sleep 5 && service couchdb stop
+RUN dnf install -y couchdb
 
 # update sudoers
 RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
