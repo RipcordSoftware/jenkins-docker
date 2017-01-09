@@ -5,7 +5,7 @@ ENV GCC_VER 4.9.2
 ENV GCC_SUFFIX 4.9
 
 # install basic tools
-RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release net-tools telnet
+RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release net-tools telnet nano
 
 # C++ tools
 RUN yum install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache

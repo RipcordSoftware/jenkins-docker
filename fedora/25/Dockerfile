@@ -3,7 +3,7 @@ MAINTAINER Craig Minihan <craig@ripcordsoftware.com>
 USER root
 
 # install basic tools
-RUN dnf install -y sudo curl wget unzip bzip2 xz pkgconfig rsync net-tools which telnet
+RUN dnf install -y sudo curl wget unzip bzip2 xz pkgconfig rsync net-tools which telnet nano
 
 # C++ tools
 RUN dnf install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache

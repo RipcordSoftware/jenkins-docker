@@ -4,7 +4,7 @@ USER root
 
 # update apt and install basic tools
 RUN apt-get update -qq && \
-    apt-get install -y -qq apt-utils sudo curl wget unzip bzip2 xz-utils pkg-config rsync net-tools telnet
+    apt-get install -y -qq apt-utils sudo curl wget unzip bzip2 xz-utils pkg-config rsync net-tools telnet nano
 
 # C++ tools
 RUN apt-get install -y -qq git gcc g++ make autoconf automake libtool doxygen valgrind ccache
