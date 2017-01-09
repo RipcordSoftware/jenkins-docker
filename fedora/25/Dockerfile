@@ -6,7 +6,7 @@ USER root
 RUN dnf install -y sudo curl wget unzip bzip2 xz pkgconfig rsync net-tools which telnet nano
 
 # C++ tools
-RUN dnf install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache
+RUN dnf install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache rpm-build
 
 # C++ libraries
 RUN dnf install -y zlib-devel boost-devel cppunit-devel
