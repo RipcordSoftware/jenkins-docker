@@ -37,7 +37,12 @@ RUN yum install -y libmpc-devel mpfr-devel gmp-devel && \
     make install && \
     popd && \
     rm -rf gcc-${GCC_VER} && \
-    echo 'export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH' > /etc/profile.d/ld-library-path.sh
+    echo '/usr/local/lib64' > /etc/ld.so.conf.d/local_lib64.conf && \
+    ldconfig && \
+    ln -s `which ccache` /usr/lib64/ccache/g++-${GCC_SUFFIX} && \
+    ln -s `which ccache` /usr/lib64/ccache/c++-${GCC_SUFFIX} && \
+    ln -s `which ccache` /usr/lib64/ccache/gcc-${GCC_SUFFIX} && \
+    ln -s `which ccache` /usr/lib64/ccache/cc-${GCC_SUFFIX}
 
 # Ruby
 RUN yum install -y ruby && \
