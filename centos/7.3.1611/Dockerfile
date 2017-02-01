@@ -3,7 +3,7 @@ MAINTAINER Craig Minihan <craig@ripcordsoftware.com>
 USER root
 
 # install basic tools
-RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release net-tools which telnet nano
+RUN yum install -y sudo curl wget unzip bzip2 xz pkgconfig rsync epel-release net-tools which telnet nano file which
 
 # C++ tools
 RUN yum install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgrind ccache
