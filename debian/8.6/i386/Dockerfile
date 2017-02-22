@@ -8,7 +8,7 @@ RUN apt-get update -qq && \
     apt-get install -y -qq apt-utils sudo curl wget unzip bzip2 xz-utils pkg-config rsync net-tools telnet nano
 
 # C++ tools
-RUN apt-get install -y -qq git make autoconf automake libtool doxygen valgrind ccache
+RUN apt-get install -y -qq gcc g++ git make autoconf automake libtool doxygen valgrind ccache
 
 # C++ libraries
 RUN apt-get install -y -qq zlib1g-dev libcppunit-dev && \
