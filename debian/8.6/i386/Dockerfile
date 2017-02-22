@@ -1,19 +1,18 @@
-FROM debian:8.6
+FROM 32bit/debian:jessie
 LABEL Description="An i386 build container for AvanceDB, et al."
 MAINTAINER Craig Minihan <craig@ripcordsoftware.com>
 USER root
 
 # update apt and install basic tools
-RUN dpkg --add-architecture i386 && \
-    apt-get update -qq && \
+RUN apt-get update -qq && \
     apt-get install -y -qq apt-utils sudo curl wget unzip bzip2 xz-utils pkg-config rsync net-tools telnet nano
 
 # C++ tools
-RUN apt-get install -y -qq git gcc-multilib g++-multilib make autoconf automake libtool doxygen valgrind ccache
+RUN apt-get install -y -qq git make autoconf automake libtool doxygen valgrind ccache
 
 # C++ libraries
-RUN apt-get install -y -qq zlib1g-dev:i386 libcppunit-dev:i386 && \
-    apt-get install -y -qq `apt-cache depends libboost-all-dev:i386 | grep -o 'libboost-.*:i386' | grep -v "\-mpi\-" | grep -v "\-all\-"`
+RUN apt-get install -y -qq zlib1g-dev libcppunit-dev && \
+    apt-get install -y -qq `apt-cache depends libboost-all-dev | grep -o 'libboost-.*' | grep -v "\-mpi\-" | grep -v "\-all\-"`
 
 # other languages
 RUN apt-get install -y -qq ruby ruby-rspec bundler && \
