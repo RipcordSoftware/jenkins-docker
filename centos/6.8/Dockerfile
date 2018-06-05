@@ -14,7 +14,9 @@ RUN yum install -y git gcc gcc-c++ make autoconf automake libtool doxygen valgri
 RUN yum install -y zlib-devel cppunit-devel
 
 # we need a new(ish) Boost
-RUN wget http://repo.enetres.net/enetres.repo -O /etc/yum.repos.d/enetres.repo && yum install -y boost-devel-1.59.0 && rm -f /etc/yum.repos.d/enetres.repo
+RUN wget https://bintray.com/vicendominguez/CentOS6/rpm -O /etc/yum.repos.d/bintray-vicendominguez-CentOS6.repo && \
+	yum install -y boost-devel-1.59.0 && \
+	rm -f /etc/yum.repos.d/bintray-vicendominguez-CentOS6.repo
 
 # build Python 2.7
 RUN yum install -y bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel && \
@@ -74,7 +76,7 @@ RUN yum install -y zip && \
 
 # build and install couchdb
 RUN yum install -y erlang-asn1 erlang-erts erlang-eunit erlang-os_mon erlang-xmerl help2man libicu-devel && \
-    wget ftp://ftp.mirrorservice.org/sites/ftp.apache.org/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz && \
+    wget https://archive.apache.org/dist/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz && \
     tar xf apache-couchdb-1.6.1.tar.gz && \
     cd apache-couchdb-1.6.1 && \
     ./configure --prefix=/usr/local --enable-init --with-erlang=/usr/lib64/erlang/erts-5.8.5/include && \
