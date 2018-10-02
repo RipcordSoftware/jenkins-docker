@@ -26,7 +26,7 @@ RUN yum install -y lcov && \
 
 # build and install couchdb
 RUN yum install -y erlang-asn1 erlang-erts erlang-eunit erlang-os_mon erlang-xmerl help2man libicu-devel js js-devel && \
-    wget ftp://ftp.mirrorservice.org/sites/ftp.apache.org/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz && \
+    wget https://archive.apache.org/dist/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz && \
     tar xf apache-couchdb-1.6.1.tar.gz && \
     cd apache-couchdb-1.6.1 && \
     ./configure --prefix=/usr/local --enable-init --with-erlang=/usr/lib64/erlang/erts-5.10.4/include && \

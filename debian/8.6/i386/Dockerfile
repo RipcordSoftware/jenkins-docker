@@ -31,7 +31,7 @@ RUN apt-get install -y -qq lcov && \
 RUN apt-get install -y erlang-nox erlang-dev && \
     apt-get install -y libnspr4 libnspr4-0d libnspr4-dev libcurl4-openssl-dev curl libicu-dev && \
     apt-get install -y libmozjs185-1.0 libmozjs185-dev && \
-    wget ftp://ftp.mirrorservice.org/sites/ftp.apache.org/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz && \
+    wget https://archive.apache.org/dist/couchdb/source/1.6.1/apache-couchdb-1.6.1.tar.gz && \
     tar xzf apache-couchdb-1.6.1.tar.gz && \
     cd apache-couchdb-1.6.1 && \
     ./configure --prefix=/usr/local --with-js-lib=/usr/lib --with-js-include=/usr/include/mozjs --enable-init && \
