@@ -22,6 +22,7 @@ RUN apt-get install -y -qq ruby ruby-rspec bundler && \
 # other language tools and libs
 RUN apt-get install -y -qq lcov && \
     pip install --upgrade pip && \
+    hash -r && \
     pip install json_tools && \
     pip install u-msgpack-python
 
